@@ -1,8 +1,5 @@
 #!/usr/bin/env python3.10
-import numpy as np
-import matplotlib.pyplot as plt
 import argparse
-import itertools as it
 import os 
 
 def get_args():
