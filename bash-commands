@@ -1,0 +1,18 @@
+1. Interactive environment on Talapas:
+
+2. Conda Environment:
+
+3. Sort blastp output files by queryID and e-value and extract necessary fields to a final input file (queryID,matchID,e-value): 
+
+cat Zebra_Aligned_HumanDB | sort -k1,1 -k11,11g | awk '{print$1" "$2" "$11}' > ZH_rbh_set
+
+cat Human_Align_ZFDB | sort -k1,1 -k11,11g | awk '{print$1" "$2" "$11}' > HZ_rbh_set
+
+4. General command for 3:
+cat BLASTP FILE | sort -queryID -e-value | awk {print $queryID $matchID $e-value} > FINAL_INPUT_blastp_file
+
+5. Command to run script: 
+./RBH.py -mf zfish_mart_rbh.txt human_mart_rbh.txt -bf HZ_rbh_set ZH_rbh_set
+
+6. General command for 5
+./RBH.py -mf BIOMART_FILE1 BIOMART_FILE2 -bf FINAL_BLASTP_FILE1 FINAL_BLASTP_FILE2
